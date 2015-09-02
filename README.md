@@ -1,5 +1,6 @@
 # R-parallel
 
 Start reading here:
-http://tobigithub.github.io/R-parallel/
+https://github.com/tobigithub/R-parallel/wiki
+
 
