@@ -41,7 +41,7 @@ Runif <- runif
 # If you don't have SuppDists, you can use: Rnorm <- rnorm
 #b <- rziggurat(10, new.start=TRUE)	# Init. the generator
 Rnorm <- rnorm
-remove("a", "b")
+#remove("a", "b")
 options(object.size=100000000)
 
 cat("\n\n   R Benchmark 3.0\n")
