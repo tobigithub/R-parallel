@@ -46,7 +46,7 @@ options(object.size=100000000)
 
 cat("\n\n   R Benchmark 3.0 (10s) (10 sec each)\n")
 cat("   ===============\n")
-cat(c("Number of times each test is run______________________________: ", runs))
+cat(c("Number of times each test is run________________________________: ", runs))
 cat("\n\n")
 
 
@@ -69,7 +69,7 @@ for (i in 1:runs) {
 }
 timing <- cumulate/runs
 times[1, 1] <- timing
-cat(c("Creation, transp., deformation of a ",msize,"x",msize," matrix (sec): ", timing, "\n"))
+cat(c("Creation, transp., deformation of a ",msize,"x",msize," matrix__ (sec): ", timing, "\n"))
 remove("a", "b")
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
 
@@ -104,7 +104,7 @@ for (i in 1:runs) {
 }
 timing <- cumulate/runs
 times[3, 1] <- timing
-cat(c("Sorting of ",msize," random values______________________ (sec): ", timing, "\n"))
+cat(c("Sorting of ",msize," random values__________________________ (sec): ", timing, "\n"))
 remove("a", "b")
 
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
@@ -176,7 +176,7 @@ for (i in 1:runs) {
 }
 timing <- cumulate/runs
 times[1, 2] <- timing
-cat(c("FFT over ",msize," random values________________________ (sec): ", timing, "\n"))
+cat(c("FFT over ",msize," random values____________________________ (sec): ", timing, "\n"))
 remove("a", "b")
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
 
@@ -198,7 +198,7 @@ for (i in 1:runs) {
 }
 timing <- cumulate/runs
 times[2, 2] <- timing
-cat(c("Eigenvalues of a ",msize,"x",msize," random matrix____________ (sec): ", timing, "\n"))
+cat(c("Eigenvalues of a ",msize,"x",msize," random matrix______________ (sec): ", timing, "\n"))
 remove("a", "b")
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
 
@@ -259,7 +259,7 @@ for (i in 1:runs) {
 }
 timing <- cumulate/runs
 times[5, 2] <- timing
-cat(c("Inverse of a ",msize,"x",msize," random matrix________________ (sec): ", timing, "\n"))
+cat(c("Inverse of a ",msize,"x",msize," random matrix__________________ (sec): ", timing, "\n"))
 remove("a", "b")
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
 
@@ -284,7 +284,7 @@ for (i in 1:runs) {
 }
 timing <- cumulate/runs
 times[1, 3] <- timing
-cat(c(msize," Fibonacci numbers calculation (vector calc)____ (sec): ", timing, "\n"))
+cat(c(msize," Fibonacci numbers calculation (vector calc)_______ (sec): ", timing, "\n"))
 remove("a", "b", "phi")
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
 
@@ -303,7 +303,7 @@ for (i in 1:runs) {
 }
 timing <- cumulate/runs
 times[2, 3] <- timing
-cat(c("Creation of a ",msize,"x",msize, " Hilbert matrix (matrix calc) (sec): ", timing, "\n"))
+cat(c("Creation of a ",msize,"x",msize, " Hilbert matrix (matrix calc)_ (sec): ", timing, "\n"))
 remove("a", "b")
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
 
@@ -322,7 +322,7 @@ for (i in 1:runs) {
 }
 timing <- cumulate/runs
 times[3, 3] <- timing
-cat(c("Grand common divisors of ",msize," pairs (recursion)_____ (sec): ", timing, "\n"))
+cat(c("Grand common divisors of ",msize," pairs (recursion)_______ (sec): ", timing, "\n"))
 remove("a", "b", "c", "gcd2")
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
 
@@ -345,7 +345,7 @@ for (i in 1:runs) {
 }
 timing <- cumulate/runs
 times[4, 3] <- timing
-cat(c("Creation of a ",msize,"x",msize," Toeplitz matrix (loops)_______ (sec): ", timing, "\n"))
+cat(c("Creation of a ",msize,"x",msize," Toeplitz matrix (loops)_________ (sec): ", timing, "\n"))
 remove("b", "j", "k")
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
 
