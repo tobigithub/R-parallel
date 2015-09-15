@@ -29,7 +29,7 @@
 #
 # type source("c:/<dir>/R2.R") to start the test
 
-runs <- 1			# Number of times the tests are executed
+runs <- 3			# Number of times the tests are executed
 times <- rep(0, 15); dim(times) <- c(5,3)
 require(Matrix)		# Optimized matrix operations
 require(SuppDists)	# Optimized random number generators
