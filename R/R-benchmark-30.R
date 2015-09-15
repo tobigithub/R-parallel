@@ -73,6 +73,7 @@ cat(c("Creation, transp., deformation of a ",msize,"x",msize," matrix (sec): ", 
 remove("a", "b")
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
 
+# (2)
 cumulate <- 0; b <- 0
 msize=4000
 for (i in 1:runs) {
