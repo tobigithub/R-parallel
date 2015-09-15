@@ -388,7 +388,7 @@ for (i in 1:runs) {
   cumulate <- cumulate + timing
 }
 times[5, 3] <- timing
-cat(c("Escoufier's method on a 45x45 matrix (mixed)____________ (sec): ", timing, "\n"))
+cat(c("Escoufier's method on a ",msize,"x",msize," matrix (mixed)____________ (sec): ", timing, "\n"))
 remove("x", "p", "vt", "vr", "vrt", "rvt", "RV", "j", "k")
 remove("x2", "R", "Rxx", "Ryy", "Rxy", "Ryx", "Rvmax", "Trace") 
 if (R.Version()$os == "Win32" || R.Version()$os == "mingw32") flush.console()
