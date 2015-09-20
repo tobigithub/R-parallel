@@ -1,6 +1,6 @@
 ### Create doSNOW cluster with 120 nodes and plot Gantt chart
 ### This works even on a single CPU computer
-### Each rscript client require 44 Mb memory, hence 6 GByte RAM needed.
+### Each rscript client requires 44 Mb memory, hence 6 GByte RAM needed.
 ### Example code from doSNOW package
 ### Tobias Kind (2015)
 
