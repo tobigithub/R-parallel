@@ -1,6 +1,6 @@
 
 ### Create doSNOW cluster with 63 nodes and plot Gantt chart
-### Each rscript client require 44 Mb memory, hence 3 GByte RAM needed.
+### Each rscript client require 44 Mb memory, hence 4 GByte RAM needed.
 ### Example code from doSNOW package
 ### Tobias Kind (2015)
 
@@ -12,7 +12,9 @@
 # load doSnow library
 library(doSNOW)
 
-# create a sockte cluster with 63 nodes (current max=63)
+# create a sockte cluster with 64 nodes (current max=128)
+# See R source connection.c which defines max number of nodes
+# define NCONNECTIONS 128 /* snow needs one per slave node */
 cl <- makeCluster(63,type="SOCK")
 
 # calculate some data points see plot(x)
