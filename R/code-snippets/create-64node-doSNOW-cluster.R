@@ -15,7 +15,7 @@ library(doSNOW)
 # create a sockte cluster with 64 nodes (current max=128)
 # See R source connection.c which defines max number of nodes
 # define NCONNECTIONS 128 /* snow needs one per slave node */
-cl <- makeCluster(63,type="SOCK")
+cl <- makeCluster(64,type="SOCK")
 
 # calculate some data points see plot(x)
 x <- rnorm(1000000)
