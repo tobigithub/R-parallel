@@ -4,12 +4,12 @@
 ### ---------------------------------------------------------------
 
 # Installation of the doSNOW parallel library with all dependencies
-# uncomment next two lines if doSNOW is not installed (remove ##)
-
-if(!is.element("doParallel", installed.packages()[,1]))
+doInstall <- TRUE # Change to FALSE if you don't want packages installed.
+toInstall <- c("doSNOW") 
+if((doInstall) && (!is.element(toInstall, installed.packages()[,1])))
 {
-	cat("Please install required package."); chooseCRANmirror(); 
-	install.packages("doParallel", dependencies = c("Depends", "Imports")) 
+	cat("Please install required package. Select server:"); chooseCRANmirror();
+	install.packages(toInstall, dependencies = c("Depends", "Imports")) 
 }
 
 # load doSnow library
@@ -20,13 +20,13 @@ Sys.time()->start;
 { 
 	# max connections = 128
 	cl <- makeCluster(32,type="SOCK")
-
+	# do nothing inbetween (parallel code is usually here)
 	# stop the cluster
 	stopCluster(cl)
 } 
     t=(Sys.time()-start);
-    cat(as.numeric(t)," sec. total\n")
-    cat(as.numeric(t/32),"sec. per thread\n")  
+    cat(round(as.numeric(t),2)," sec. total\n")
+    cat(round(as.numeric(t/32),2),"sec. per thread\n")  
 
 # clean up memory
 invisible(gc())
