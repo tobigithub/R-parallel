@@ -1,6 +1,6 @@
 ### Benchmark creation of doSNOW cluster 
 ### Each rscript client require 44 Mb memory, hence 1-2 GByte RAM needed.
-### Tobias Kind (2015)
+### Tobias Kind (2015) https://github.com/tobigithub/R-parallel/
 ### ---------------------------------------------------------------
 
 # Installation of the doSNOW parallel library with all dependencies
