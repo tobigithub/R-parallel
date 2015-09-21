@@ -6,8 +6,14 @@
 
 # Installation of the doSNOW parallel library with all dependencies
 # uncomment next two lines if doSNOW is not installed (remove ##)
-##chooseCRANmirror()
-##install.packages("doSNOW", dependencies = c("Depends", "Imports")) 
+# Installation of the doSNOW parallel library with all dependencies
+doInstall <- TRUE # Change to FALSE if you don't want packages installed.
+toInstall <- c("doSNOW") 
+if((doInstall) && (!is.element(toInstall, installed.packages()[,1])))
+{
+	cat("Please install required package. Select server:"); chooseCRANmirror();
+	install.packages(toInstall, dependencies = c("Depends", "Imports")) 
+}
 
 # load doSnow library
 library(doSNOW)
