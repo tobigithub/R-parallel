@@ -17,60 +17,51 @@ if((doInstall) && (!is.element(toInstall, installed.packages()[,1])))
 # load doSnow library
 library(doSNOW)
 
-
 # Reset plotting grid
 par(mfrow=c(1,1))
 
-cl <- makeCluster(4,type="SOCK")
-x <- rnorm(1000000)
-tm1 <- snow.time(clusterCall(cl, function(x) for (i in 1:1000) sum(x), x))
-print(tm1)
-plot(tm1)
+# Define variables, increase or decrease loopMax
+x <- rnorm(1000000); loopMax = 1000
+
+#-----------------------------------------------------------------------------
+cl <- makeCluster(4,type="SOCK"); clusterExport(cl,"loopMax");
+tm1 <- snow.time(clusterCall(cl, function(x) for (i in 1:loopMax) sum(x), x))
+print(tm1); plot(tm1);
 stopCluster(cl)
 #-----------------------------------------------------------------------------
-cl <- makeCluster(8,type="SOCK")
-x <- rnorm(1000000)
-tm2 <- snow.time(clusterCall(cl, function(x) for (i in 1:1000) sum(x), x))
-print(tm2)
-plot(tm2)
+cl <- makeCluster(8,type="SOCK"); clusterExport(cl,"loopMax");
+tm2 <- snow.time(clusterCall(cl, function(x) for (i in 1:loopMax) sum(x), x))
+print(tm2); plot(tm2);
 stopCluster(cl)
 #-----------------------------------------------------------------------------
-cl <- makeCluster(16,type="SOCK")
-x <- rnorm(1000000)
-tm3 <- snow.time(clusterCall(cl, function(x) for (i in 1:1000) sum(x), x))
-print(tm3)
-plot(tm3)
+cl <- makeCluster(16,type="SOCK"); clusterExport(cl,"loopMax");
+tm3 <- snow.time(clusterCall(cl, function(x) for (i in 1:loopMax) sum(x), x))
+print(tm3); plot(tm3);
 stopCluster(cl)
 #-----------------------------------------------------------------------------
-cl <- makeCluster(32,type="SOCK")
-x <- rnorm(1000000)
-tm4 <- snow.time(clusterCall(cl, function(x) for (i in 1:1000) sum(x), x))
-print(tm4)
-plot(tm4)
+cl <- makeCluster(32,type="SOCK"); clusterExport(cl,"loopMax");
+tm4 <- snow.time(clusterCall(cl, function(x) for (i in 1:loopMax) sum(x), x))
+print(tm4); plot(tm4);
 stopCluster(cl)
 #------------------------------------------------------------------------------
-cl <- makeCluster(64,type="SOCK")
-x <- rnorm(1000000)
-tm5 <- snow.time(clusterCall(cl, function(x) for (i in 1:1000) sum(x), x))
-print(tm5)
-plot(tm5)
+cl <- makeCluster(64,type="SOCK"); clusterExport(cl,"loopMax");
+tm5 <- snow.time(clusterCall(cl, function(x) for (i in 1:loopMax) sum(x), x))
+print(tm5); plot(tm5);
 stopCluster(cl)
 #------------------------------------------------------------------------------
-cl <- makeCluster(120,type="SOCK")
-x <- rnorm(1000000)
-tm6 <- snow.time(clusterCall(cl, function(x) for (i in 1:1000) sum(x), x))
-print(tm6)
-plot(tm6)
+cl <- makeCluster(120,type="SOCK"); clusterExport(cl,"loopMax");
+tm6 <- snow.time(clusterCall(cl, function(x) for (i in 1:loopMax) sum(x), x))
+print(tm6); plot(tm6);
 stopCluster(cl)
 #------------------------------------------------------------------------------
 # set plot region to 2 down and 3 left
 par(mfrow=c(2,3))
-plot(tm1)
-plot(tm2)
-plot(tm3)
-plot(tm4)
-plot(tm5)
-plot(tm6)
+plot(tm1, title = "Cluster Usage: 4 nodes", ylab = "Number of nodes",  xlab = "Elapsed Time [s]")
+plot(tm2, title = "Cluster Usage: 8 nodes", ylab = "Number of nodes",  xlab = "Elapsed Time [s]")
+plot(tm3, title = "Cluster Usage: 16 nodes", ylab = "Number of nodes",  xlab = "Elapsed Time [s]")
+plot(tm4, title = "Cluster Usage: 32 nodes", ylab = "Number of nodes",  xlab = "Elapsed Time [s]")
+plot(tm5, title = "Cluster Usage: 64 nodes", ylab = "Number of nodes",  xlab = "Elapsed Time [s]")
+plot(tm6, title = "Cluster Usage: 120 nodes", ylab = "Number of nodes",  xlab = "Elapsed Time [s]")
 
 # clean up memory
 invisible(gc())
