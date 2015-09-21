@@ -1,11 +1,16 @@
 ### Benchmark creation of doSNOW cluster 
 ### Each rscript client require 44 Mb memory, hence 1-2 GByte RAM needed.
 ### Tobias Kind (2015)
+### ---------------------------------------------------------------
 
 # Installation of the doSNOW parallel library with all dependencies
 # uncomment next two lines if doSNOW is not installed (remove ##)
-##chooseCRANmirror()
-##install.packages("doSNOW", dependencies = c("Depends", "Imports")) 
+
+if(!is.element("doParallel", installed.packages()[,1]))
+{
+	cat("Please install required package."); chooseCRANmirror(); 
+	install.packages("doParallel", dependencies = c("Depends", "Imports")) 
+}
 
 # load doSnow library
 library(doSNOW)
@@ -24,6 +29,6 @@ Sys.time()->start;
     cat(as.numeric(t/32),"sec. per thread\n")  
 
 # clean up memory
-gc()
+invisible(gc())
 
 ### END
