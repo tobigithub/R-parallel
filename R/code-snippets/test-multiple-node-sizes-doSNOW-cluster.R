@@ -4,7 +4,7 @@
 ### Example code from doSNOW package
 ### Tobias Kind (2015)
 
-# Installation of the doSNOW parallel library with all dependencies
+
 # Installation of the doSNOW parallel library with all dependencies
 doInstall <- TRUE # Change to FALSE if you don't want packages installed.
 toInstall <- c("doSNOW") 
@@ -23,6 +23,7 @@ par(mfrow=c(1,1))
 # Define variables, increase or decrease loopMax
 x <- rnorm(1000000); loopMax = 1000
 
+# clusterCall() calls a function with identical arguments on each node
 #-----------------------------------------------------------------------------
 cl <- makeCluster(4,type="SOCK"); clusterExport(cl,"loopMax");
 tm1 <- snow.time(clusterCall(cl, function(x) for (i in 1:loopMax) sum(x), x))
