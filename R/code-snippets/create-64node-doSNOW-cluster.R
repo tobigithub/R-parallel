@@ -18,7 +18,7 @@ if((doInstall) && (!is.element(toInstall, installed.packages()[,1])))
 # load doSnow library
 library(doSNOW)
 
-# create a sockte cluster with 64 nodes (current max=128)
+# create a socket cluster with 64 nodes (current max=128)
 # See R source connection.c which defines max number of nodes
 # define NCONNECTIONS 128 /* snow needs one per slave node */
 cl <- makeCluster(64,type="SOCK")
