@@ -2,7 +2,8 @@
 ### Create doSNOW cluster with 63 nodes and plot Gantt chart
 ### Each rscript client require 44 Mb memory, hence 4 GByte RAM needed.
 ### Example code from doSNOW package
-### Tobias Kind (2015)
+### Tobias Kind (2015) 
+### https://github.com/tobigithub/R-parallel/wiki/
 
 # Installation of the doSNOW parallel library with all dependencies
 # uncomment next two lines if doSNOW is not installed (remove ##)
