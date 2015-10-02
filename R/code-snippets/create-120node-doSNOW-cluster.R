@@ -2,8 +2,8 @@
 ### This works even on a single CPU computer
 ### Each rscript client requires 44 Mb memory, hence 6 GByte RAM needed.
 ### Example code from doSNOW package
-# Tobias Kind (2015) 
-# https://github.com/tobigithub/R-parallel/wiki/
+### Tobias Kind (2015) 
+### https://github.com/tobigithub/R-parallel/wiki/
 
 # Installation of the doSNOW parallel library with all dependencies
 # Installation of the doSNOW parallel library with all dependencies
