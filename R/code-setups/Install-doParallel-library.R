@@ -1,3 +1,7 @@
+# Create doParallel cluster in R
+# Tobias Kind (2015) 
+# https://github.com/tobigithub/R-parallel/wiki/
+
 ### Installation of package with all dependent packages
 chooseCRANmirror()
 install.packages("doParallel", dependencies = c("Depends", "Imports")) 
