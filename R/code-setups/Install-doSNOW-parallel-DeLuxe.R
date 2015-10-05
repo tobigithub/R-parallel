@@ -45,6 +45,9 @@ getDoParWorkers(); getDoParName();
 # stop cluster and remove clients
 stopCluster(cluster); print("Cluster stopped.")
 
+# insert serial backend, otherwise error in repetetive tasks
+registerDoSEQ()
+
 # clean up a bit.
 invisible(gc); remove(nCores); remove(nThreads); remove(cluster); 
 
