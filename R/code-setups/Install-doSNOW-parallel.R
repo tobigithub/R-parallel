@@ -26,3 +26,7 @@ registerDoSNOW(cluster)
 # stop cluster and remove clients
 stopCluster(cluster)
 
+# insert serial backend, otherwise error in repetetive tasks
+registerDoSEQ()
+
+
