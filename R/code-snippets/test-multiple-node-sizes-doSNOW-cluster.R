@@ -64,6 +64,9 @@ plot(tm4, title = "Cluster Usage: 32 nodes", ylab = "Number of nodes",  xlab = "
 plot(tm5, title = "Cluster Usage: 64 nodes", ylab = "Number of nodes",  xlab = "Elapsed Time [s]")
 plot(tm6, title = "Cluster Usage: 120 nodes", ylab = "Number of nodes",  xlab = "Elapsed Time [s]")
 
+# insert serial backend, otherwise error in repetetive tasks
+registerDoSEQ()
+
 # clean up memory
 invisible(gc())
 
