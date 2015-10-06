@@ -38,6 +38,9 @@ plot(tm)
 # stop the cluster
 stopCluster(cl)
 
+# insert serial backend, otherwise error in repetetive tasks
+registerDoSEQ()
+
 # remove the large x object and clean up memory
 remove(x); gc()
 
